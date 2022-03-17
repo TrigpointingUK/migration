@@ -2,16 +2,18 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
-import { Trig } from './entities/trig.entity';
+import { User } from './entities/user.entity';
+
 
 @Injectable()
-export class TrigService {
+export class UserService {
   constructor(
-    @InjectRepository(Trig)
-    private trigsRepository: Repository<Trig>,
+    @InjectRepository(User)
+    private userRepository: Repository<User>,
   ) {}
 
   async findOne(id: number) {
-    return await this.trigsRepository.findOne(id);
+    return await this.userRepository.findOne(id);
   }
+
 }

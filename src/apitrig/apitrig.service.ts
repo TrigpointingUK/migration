@@ -4,7 +4,6 @@ import axios from 'axios';
 import { Trig } from '../trig/entities/trig.entity';
 import { TrigService } from 'src/trig/trig.service';
 import { CreateApitrigDto } from './dto/create-apitrig.dto';
-import { CallTracker } from 'assert';
 
 @Injectable()
 export class ApitrigService {
@@ -34,8 +33,8 @@ export class ApitrigService {
     data.historic_use = trig.historic_use;
     data.condition = trig.condition;
     data.status = trig.status_id.toString();
-    data.fb_number = trig.fb_number ? trig.fb_number : null;
-    data.stn_number = trig.stn_number ? trig.stn_number : null;
+    data.fb_number = trig.fb_number || null
+    data.stn_number = trig.stn_number || null
     data.stn_number_active = trig.stn_number_active
       ? trig.stn_number_active
       : null;
@@ -45,16 +44,16 @@ export class ApitrigService {
     data.stn_number_passive = trig.stn_number_passive
       ? trig.stn_number_passive
       : null;
-    data.os_net_web_id = trig.os_net_web_id ? trig.os_net_web_id : null;
+    data.os_net_web_id = trig.os_net_web_id || null
     data.permission_ind = trig.permission_ind;
-    data.postcode6 = trig.postcode6 ? trig.postcode6 : null;
-    data.county = trig.county ? trig.county : null;
-    data.town = trig.town ? trig.town : null;
+    data.postcode6 = trig.postcode6 || null
+    data.county = trig.county || null
+    data.town = trig.town || null
 
     // Sanitise
     data.fb_number = data.fb_number === 'NA' ? null : data.fb_number;
 
-    //console.log(JSON.stringify(data));
+    // console.log(JSON.stringify(data));
     // console.log(data);
     try {
       const response = await axios.post(

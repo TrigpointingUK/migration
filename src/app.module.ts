@@ -6,6 +6,8 @@ import { getConnectionOptions } from 'typeorm';
 import { TrigModule } from './trig/trig.module';
 import { ApitrigModule } from './apitrig/apitrig.module';
 import { ConfigModule } from '@nestjs/config';
+import { UserModule } from './user/user.module';
+import { ApiuserModule } from './apiuser/apiuser.module';
 
 @Module({
   imports: [
@@ -18,10 +20,10 @@ import { ConfigModule } from '@nestjs/config';
     ConfigModule.forRoot(),
     TrigModule,
     ApitrigModule,
+    UserModule,
+    ApiuserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
-
-//  "entities": ["dist/**/*.entity{.ts,.js}"],
