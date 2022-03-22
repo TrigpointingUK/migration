@@ -8,6 +8,8 @@ import { ApitrigModule } from './apitrig/apitrig.module';
 import { ConfigModule } from '@nestjs/config';
 import { UserModule } from './user/user.module';
 import { ApiuserModule } from './apiuser/apiuser.module';
+import { LogModule } from './log/log.module';
+import { ApilogModule } from './apilog/apilog.module';
 
 @Module({
   imports: [
@@ -22,7 +24,8 @@ import { ApiuserModule } from './apiuser/apiuser.module';
     ApitrigModule,
     UserModule,
     ApiuserModule,
-  ],
+    LogModule,
+    ApilogModule,  ],
   controllers: [AppController],
   providers: [AppService],
 })

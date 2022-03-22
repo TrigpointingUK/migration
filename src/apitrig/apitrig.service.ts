@@ -106,7 +106,7 @@ export class ApitrigService {
     }
   }
 
-  static auth0Token: string;
+  static auth0Token: string = "DUMMY";
   async _getApiToken() {
     if (!ApitrigService.auth0Token) {
       const postData = {
