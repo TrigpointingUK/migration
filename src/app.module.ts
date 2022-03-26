@@ -10,6 +10,8 @@ import { UserModule } from './user/user.module';
 import { ApiuserModule } from './apiuser/apiuser.module';
 import { LogModule } from './log/log.module';
 import { ApilogModule } from './apilog/apilog.module';
+import { PhotoModule } from './photo/photo.module';
+import { ApiphotoModule } from './apiphoto/apiphoto.module';
 
 @Module({
   imports: [
@@ -25,7 +27,10 @@ import { ApilogModule } from './apilog/apilog.module';
     UserModule,
     ApiuserModule,
     LogModule,
-    ApilogModule,  ],
+    ApilogModule,
+    PhotoModule,
+    ApiphotoModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
